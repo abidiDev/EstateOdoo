@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <menuitem
+        id="re_menu_root"
+        name="Real_Estate"
+        sequence="10"/>
+</odoo>

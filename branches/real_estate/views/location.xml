@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_re_location_kanban" model="ir.ui.view">
+        <field name="name">re.location.kanban</field>
+        <field name="model">re.location</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="state"/>
+                <field name="city"/>
+                <field name="postal_code"/>
+                <field name="street"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="state"/>
+                                </strong>
+                                <div t-if="record.city.value">
+                                    <t t-esc="record.city.value"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <!-- The part of code below represent the form to add the related model objects  -->
+
+    <record id="view_re_location_form" model="ir.ui.view">
+        <field name="name">re.location.form</field>
+        <field name="model">re.location</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="ref"/>
+
+                        <field name="state"/>
+                        <field name="city"/>
+                        <field name="postal_code"/>
+                        <field name="street"/>
+
+
+                    </group>
+                </sheet>
+                <!-- The part of code below represents the chatter section   -->
+                <div class="oe_chatter">
+                    <!-- Followers view -->
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+
+    </record>
+    <!-- The part of code below represent the tree to display the list of location objects  -->
+
+    <record id="view_re_location_tree" model="ir.ui.view">
+        <field name="name">re.location.tree</field>
+        <field name="model">re.location</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="state"/>
+                <field name="city"/>
+                <field name="postal_code"/>
+                <field name="street"/>
+            </tree>
+        </field>
+
+    </record>
+    <!-- search view -->
+    <record id="location_search" model="ir.ui.view">
+        <field name="name">re.location.search</field>
+        <field name="model">re.location</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="state" string="State"/>
+                <field name="city" string="City"/>
+                <field name="postal_code" string="Postal code"/>
+                <field name="street" string="Street"/>
+
+            </search>
+        </field>
+    </record>
+    <!-- The part of code below create an action  -->
+
+    <record id="action_re_location" model="ir.actions.act_window">
+        <field name="name">location</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">re.location</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+
+    <menuitem
+            id="re_menu_location"
+            parent="re_menu_root"
+            name="location"
+            action="action_re_location"
+            sequence="10"/>
+</odoo>
