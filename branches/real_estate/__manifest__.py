@@ -6,11 +6,11 @@
     'depends': ['base', 'mail'],
     'data': [
         "security/ir.model.access.csv",
-        'views/menu.xml',
-        'views/adds.xml',
-        'views/location.xml',
-        'data/sequence.xml'
-
+        "data/sequence.xml",
+        "views/menu.xml",
+        "views/contacts.xml",
+        "views/estate.xml",
+        "views/location.xml",
     ],
     'installable': True,
     'auto_install': True,

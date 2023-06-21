@@ -91,20 +91,4 @@
             </search>
         </field>
     </record>
-    <!-- The part of code below create an action  -->
-
-    <record id="action_re_location" model="ir.actions.act_window">
-        <field name="name">location</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">re.location</field>
-        <field name="view_mode">tree,form,kanban</field>
-    </record>
-
-
-    <menuitem
-            id="re_menu_location"
-            parent="re_menu_root"
-            name="location"
-            action="action_re_location"
-            sequence="10"/>
 </odoo>

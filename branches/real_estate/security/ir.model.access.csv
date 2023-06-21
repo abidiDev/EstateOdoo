@@ -1,4 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-re_user,Base User,model_re_estate,base.group_user,1,1,1,1
-re_userL,Base User,model_re_location,base.group_user,1,1,1,1
-re_userT,Base User,model_re_tag,base.group_user,1,1,1,1
+access_agent,Base User,model_re_agent,base.group_user,1,1,1,1
+access_partner,Base User,model_re_partner,base.group_user,1,1,1,1
+access_estate,Base User,model_re_estate,base.group_user,1,1,1,1
+access_contract,Base User,model_re_contract,base.group_user,1,1,1,1
+access_localisation,Base User,model_re_location,base.group_user,1,1,1,1
+access_tag,Base User,model_re_tag,base.group_user,1,1,1,1
